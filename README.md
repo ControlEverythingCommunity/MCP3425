@@ -1,4 +1,4 @@
-[![MCP3425](MCP3425_I2CS.png)](https://www.controleverything.com/content/Analog-Digital-Converters?sku=MCP3425_I2CADC)
+[![MCP3425](MCP3425_I2CADC.png)](https://www.controleverything.com/content/Analog-Digital-Converters?sku=MCP3425_I2CADC)
 # MCP3425
 MCP3425 Analog to Digital Converter
 
