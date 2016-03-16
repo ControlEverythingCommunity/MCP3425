@@ -2,7 +2,7 @@
 # MCP3425
 MCP3425 Analog to Digital Converter
 
-The MCP3425 is a 1-Channel Analog to Digital Converter.
+The MCP3425 is 16-Bit 1-Channel Analog to Digital Converter.
 
 This Device is available from ControlEverything.com [SKU: MCP3425_I2CS]
 
