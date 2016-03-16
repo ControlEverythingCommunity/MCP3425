@@ -1,4 +1,5 @@
 lang:java
 lang:python
 lang:arduino
+lang:particle
 sku:MCP3425_I2CADC
