@@ -1,10 +1,10 @@
-[![MCP3425](MCP3425_I2CS.png)](https://www.controleverything.com/content/Analog-Digital-Converters?sku=MCP3425_I2CADC)
+[![MCP3425](MCP3425_I2CADC.png)](https://www.controleverything.com/content/Analog-Digital-Converters?sku=MCP3425_I2CADC)
 # MCP3425
 MCP3425 Analog to Digital Converter
 
 The MCP3425 is a 1-Channel Analog to Digital Converter.
 
-This Device is available from ControlEverything.com [SKU: MCP3425_I2CS]
+This Device is available from ControlEverything.com [SKU: MCP3425_I2CADC]
 
 https://www.controleverything.com/content/Analog-Digital-Converters?sku=MCP3425_I2CADC
 
