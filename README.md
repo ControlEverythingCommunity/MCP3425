@@ -8,7 +8,7 @@ This Device is available from ControlEverything.com [SKU: MCP3425_I2CADC]
 
 https://www.controleverything.com/content/Analog-Digital-Converters?sku=MCP3425_I2CADC
 
-This Sample code can be used with Raspberry pi, Arduino and Particle.
+This Sample code can be used with Raspberry pi, Arduino, Particle and Beaglebone Black.
 
 ## Java
 Download and install pi4j library on Raspberry pi. Steps to install pi4j are provided at:
@@ -61,5 +61,19 @@ https://build.particle.io/build/
 Verify and flash the code on your Photon. Code output is shown in logs at dashboard:
 
 https://dashboard.particle.io/user/logs
+
+
+##C
+
+Download (or git pull) the code in Beaglebone Black.
+
+Compile the c program.
+```cpp
+$>gcc MCP3425.c -o MCP3425
+```
+Run the c program.
+```cpp
+$>./MCP3425
+```
 
 #####The code output is digital value of an analog input.
