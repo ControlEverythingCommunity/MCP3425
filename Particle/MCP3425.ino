@@ -58,7 +58,7 @@ void loop()
   raw_adc = data[0] * 256 + data[1];
   if (raw_adc > 2047)
   {
-    raw_adc -= 4096;
+    raw_adc -= 4095;
   }
 
   // Output data to dashboard
