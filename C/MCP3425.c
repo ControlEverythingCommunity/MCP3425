@@ -45,7 +45,7 @@ void main()
 		int raw_adc = ((data[0] & 0x0F) * 256 + data[1]);
 		if(raw_adc > 2047)
 		{
-			raw_adc -= 4096;
+			raw_adc -= 4095;
 		}
 
 		// Output data to screen
