@@ -11,53 +11,57 @@
 #define Addr 0x68
 
 int raw_adc = 0;
-void setup() 
+void setup()
 {
-    // Set variable
-    Particle.variable("i2cdevice", "MCP3425");
-    Particle.variable("rawADC", raw_adc);
-    
-    // Initialise I2C communication as MASTER
-    Wire.begin();
-    // Start serial communication and set baud rate = 9600
-    Serial.begin(9600);
-    
-    // Start I2C Transmission
-    Wire.beginTransmission(Addr);
-    // Select configuration command
-    // Continuous conversion mode, Channel-1
-    Wire.write(0x10);
-    // Stop I2C Transmission
-    Wire.endTransmission();
-    delay(300);
+  // Set variable
+  Particle.variable("i2cdevice", "MCP3425");
+  Particle.variable("rawADC", raw_adc);
+
+  // Initialise I2C communication as MASTER
+  Wire.begin();
+  // Start serial communication and set baud rate = 9600
+  Serial.begin(9600);
+
+  // Start I2C Transmission
+  Wire.beginTransmission(Addr);
+  // Select configuration command
+  // Continuous conversion mode, Channel-1
+  Wire.write(0x10);
+  // Stop I2C Transmission
+  Wire.endTransmission();
+  delay(300);
 }
 
 void loop()
 {
-    unsigned int data[2];
-    // Start I2C Transmission
-    Wire.beginTransmission(Addr);
-    // Select data register
-    Wire.write(0x00);
-    // Stop I2C Transmission
-    Wire.endTransmission();
-    
-    // Request 2 bytes of data
-    Wire.requestFrom(Addr, 2);
-    
-    // Read 2 bytes of data
-    // raw_adc msb, raw_adc lsb
-    if(Wire.available() == 2)
-    {
-        data[0] = Wire.read();
-        data[1] = Wire.read();
-    }
-    delay(300);
-    
-    // Convert the data
-    raw_adc = data[0] * 256 + data[1];    
-    
-    // Output data to dashboard
-    Particle.publish("Digital Value of Analog Input : ", String(raw_adc));
-    delay(500);
+  unsigned int data[2];
+  // Start I2C Transmission
+  Wire.beginTransmission(Addr);
+  // Select data register
+  Wire.write(0x00);
+  // Stop I2C Transmission
+  Wire.endTransmission();
+
+  // Request 2 bytes of data
+  Wire.requestFrom(Addr, 2);
+
+  // Read 2 bytes of data
+  // raw_adc msb, raw_adc lsb
+  if (Wire.available() == 2)
+  {
+    data[0] = Wire.read();
+    data[1] = Wire.read();
+  }
+  delay(300);
+
+  // Convert the data
+  raw_adc = data[0] * 256 + data[1];
+  if (raw_adc > 2047)
+  {
+    raw_adc -= 4096;
+  }
+
+  // Output data to dashboard
+  Particle.publish("Digital Value of Analog Input : ", String(raw_adc));
+  delay(500);
 }
